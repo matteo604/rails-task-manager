@@ -9,5 +9,12 @@
     <%= link_to "Edit this task", task_edit_path(@task), class: 'btn btn-warning' %>
   </div>
    <div class="mt-4">
-   <%= link_to "Back to Task List", tasks_path, class: 'btn btn-secondary' %>
+   <%= link_to "Back to Task List", tasks_path, class: 'btn btn-danger' %>
+  </div>
+
+<div class="mt-4">
+   <%= link_to "Delete",
+   task_path(@task),
+   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+   class: 'btn btn-secondary' %>
   </div>
