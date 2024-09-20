@@ -1,0 +1,22 @@
+  <strong><%= "Edit " + @task.title.capitalize %></strong>
+
+    <%= form_for @task do |f| %>
+      <div class="mb-3">
+        <%= f.label :title, class: 'form-label' %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :details, class: 'form-label' %>
+        <%= f.text_area :details, class: 'form-control' %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :completed, class: 'form-check-label' %>
+        <%= f.check_box :completed, class: 'form-check-input' %>
+      </div>
+      <div>
+        <%= f.submit "Save Task", class: 'btn btn-success' %>
+      </div>
+      <div class="mt-4">
+         <%= link_to "Back to Task List", tasks_path, class: 'btn btn-secondary' %>
+      </div>
+    <% end %>
